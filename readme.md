@@ -1,27 +1,48 @@
-# Laravel PHP Framework
+# App, templates, modules, migrations, models, business logic  GENERATOR
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+It is a web application for Laravel framework that helps to scaffold laravel project for faster development experience.
+The main purpose is to popularize framework among the devs, communities and eventually the business owners or clients.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Structure
+The main folder is Core. The main business logic is situated there.
+ such folder should follow such design realizations:
+1. Components - the folder for partial view components or the components that have their own scaffolding.  
+___
+2. Contracts  - basically these are interfaces that are used for the business logic. They shouldn't be implemented by the concrete repositories. 
+The main goal is to provide interfaces for classes that include some specific logic like drivers for example.
+Also one more example is to use tightened interfaces and traits all up together in one class.
+___
+3. FacadeAccessors these the Laravel Facades for classes.
+___
+4. Facades these are the classes that scaffold different classes in one place and perform the logic with a help of them instead of injecting
+concrete repository classes or their interfaces into controllers for example. 
+Would be better just to inject specific facade into a controller.
+___
+5. Mail Composers just the folder for mail composers the classes that ease up a little bit sending mail.
+___
+6. Models Just The folder for Core Models
+___
+7. Presenters - classes that  implement different sort of transformers. Used to help output the data to view or client in general.
+___
+8. Transformers - preform models transformation while trying to the transformed model data.
+___
+9. Repositories - concrete repository class that maps data, adds some model data feature methods. Used basically for one model.
+___
+10. RepositoryInterfaces - additional interfaces for concrete repositories in our case prefixed with Eloquent word in the end to the name of repository interface.
+___
+11. ServiceIntegrations - the folder to integrate different sort of services as for example facebook, youtube etc.
+__
+12. Traits - code methods and blocks that can be reused but don't need to be concrete or abstracted.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+If you like the idea of fast project scaffolding and like laravel  please contribute it would be really appreciated.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Laravel, please send an e-mail to Nikolenko Ivan at nikoleivan@gmail.com.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+*MIT*
+

@@ -155,7 +155,12 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        
+        /*
+         * custom app providers
+         * */
+        Collective\Html\HtmlServiceProvider::class,
+        nilsenj\Toastr\ToastrServiceProvider::class,
     ],
 
     /*

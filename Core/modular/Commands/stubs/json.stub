@@ -1,0 +1,25 @@
+{
+    "name": "$STUDLY_NAME$",
+    "alias": "$LOWER_NAME$",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "private" : false,
+    "default" : true,
+    "status" : false,
+    "version" : "0.0",
+    "release_date" : "",
+    "author" : "$AUTHOR_NAME$",
+    "created" : "$CREATED$",
+    "description" : "$LOWER_NAME$::main.description",
+    "absentImage" : "images/default-module.png",
+    "reviewImages" : ["images/default-module.png"],
+    "dependencies" : [""],
+    "providers": [
+        "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Providers\\$STUDLY_NAME$ServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

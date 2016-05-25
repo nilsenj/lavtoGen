@@ -1,0 +1,13 @@
+<?php namespace $NAMESPACE$;
+   
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
+
+class $CLASS$ extends Model {
+
+    protected $fillable = $FILLABLE$;
+
+    public static $logCustomFields = [
+            'module_name'  => '$MODULE$'
+        ];
+}

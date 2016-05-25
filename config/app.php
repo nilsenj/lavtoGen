@@ -155,12 +155,31 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        
+        App\Providers\PresentersServiceProvider::class,
+        App\Providers\RepositoriesServiceProvider::class,
+        App\Providers\TransformersServiceProvider::class,
+        \App\Providers\CustomValidatorServiceProvider::class,
+        \App\Providers\ModelServiceProvider::class,
+        \App\Providers\UserServiceProvider::class,
+
         /*
          * custom app providers
          * */
         Collective\Html\HtmlServiceProvider::class,
         nilsenj\Toastr\ToastrServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Pingpong\Generators\GeneratorsServiceProvider::class,
+        Torann\Hashids\HashidsServiceProvider::class,
+        \RepositoryLab\Repository\RepositoryServiceProvider::class,
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        A6digital\Image\DefaultProfileImageServiceProvider::class,
+        Cviebrock\ImageValidator\ImageValidatorServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        \Barryvdh\Cors\ServiceProvider::class,
+        CodeZero\Mailer\MailerServiceProvider::class,
+        Core\Modular\ModulesServiceProvider::class,
     ],
 
     /*
@@ -206,7 +225,13 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Toastr' => nilsenj\Toastr\Facades\Toastr::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Countries' => Webpatser\Countries\CountriesFacade::class,
+        'Module' =>  Core\Modular\Facades\Module::class,
     ],
 
 ];

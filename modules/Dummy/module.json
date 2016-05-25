@@ -1,0 +1,25 @@
+{
+    "name": "Dummy",
+    "alias": "dummy",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "private" : false,
+    "default" : true,
+    "status" : false,
+    "version" : "0.0",
+    "release_date" : "",
+    "author" : "Nikolenko Ivan",
+    "created" : "2016-05-25 16:22:35",
+    "description" : "dummy::main.description",
+    "absentImage" : "images/default-module.png",
+    "reviewImages" : ["images/default-module.png"],
+    "dependencies" : [""],
+    "providers": [
+        "Modules\\Dummy\\Providers\\DummyServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+	"name": "lavtoGen-modular/dummy",
+	"description": "",
+	"authors": [
+		{
+			"name": "Nikolenko Ivan",
+			"email": "nikoleivan@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Modules\\Dummy\\": ""
+		}
+	}
+}

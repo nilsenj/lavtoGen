@@ -6,7 +6,8 @@ The main purpose is to popularize framework among the devs, communities and even
 ## Structure
 The main folder is Core. The main business logic is situated there.
  such folder should follow such design realizations:
-1. Components - the folder for partial view components or the components that have their own scaffolding.  
+___
+1. Components - the folder for partial view components or the components that have their own scaffolding.
 ___
 2. Contracts  - basically these are interfaces that are used for the business logic. They shouldn't be implemented by the concrete repositories. 
 The main goal is to provide interfaces for classes that include some specific logic like drivers for example.

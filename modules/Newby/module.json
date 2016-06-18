@@ -1,0 +1,25 @@
+{
+    "name": "Newby",
+    "alias": "newby",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "private" : false,
+    "default" : true,
+    "status" : false,
+    "version" : "0.0",
+    "release_date" : "",
+    "author" : "Nikolenko Ivan",
+    "created" : "2016-06-14 10:40:33",
+    "description" : "newby::main.description",
+    "absentImage" : "images/default-module.png",
+    "reviewImages" : ["images/default-module.png"],
+    "dependencies" : [""],
+    "providers": [
+        "Modules\\Newby\\Providers\\NewbyServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

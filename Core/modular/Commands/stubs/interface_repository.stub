@@ -1,0 +1,14 @@
+<?php
+
+namespace Modules\$MODULE$\Repositories;
+
+use RepositoryLab\Repository\Contracts\RepositoryInterface;
+
+/**
+ * Interface $CLASS$Repository
+ * @package $NAMESPACE$
+ */
+interface $CLASS$Repository extends RepositoryInterface
+{
+    //
+}

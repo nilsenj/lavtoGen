@@ -1,16 +1,16 @@
 <?php
 
-Modules\$MODULE$\Repositories;
+namespace Modules\$MODULE$\Repositories;
 
 use RepositoryLab\Repository\Eloquent\BaseRepository;
 use RepositoryLab\Repository\Criteria\RequestCriteria;
-use $MODEL$;
+use Modules\$MODULE$\Entities\$MODEL$;
 
 /**
  * Class $CLASS$RepositoryEloquent
  * @package $NAMESPACE$
  */
-class $CLASS$RepositoryEloquent extends BaseRepository implements $CLASS$Repository
+class $REPOSITORYELOQUENTNAME$ extends BaseRepository implements $REPOSITORYNAME$
 {
     /**
      * Specify Model class name
@@ -19,7 +19,7 @@ class $CLASS$RepositoryEloquent extends BaseRepository implements $CLASS$Reposit
      */
     public function model()
     {
-        return $CLASS$::class;
+        return $MODEL$::class;
     }
 
     /**

@@ -180,6 +180,7 @@ return [
         \Barryvdh\Cors\ServiceProvider::class,
         CodeZero\Mailer\MailerServiceProvider::class,
         Core\Modular\ModulesServiceProvider::class,
+        \Webpatser\Countries\CountriesServiceProvider::class,
     ],
 
     /*

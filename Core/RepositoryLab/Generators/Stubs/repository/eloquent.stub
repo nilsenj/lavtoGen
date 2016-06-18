@@ -1,11 +1,12 @@
 <?php
 
-$NAMESPACE$
+namespace $NAMESPACE$;
 
 use RepositoryLab\Repository\Eloquent\BaseRepository;
 use RepositoryLab\Repository\Criteria\RequestCriteria;
 use $REPOSITORY$
 use $MODEL$;
+use Modules\$MODULE$\Interfaces\$CLASS$Repository;
 
 /**
  * Class $CLASS$RepositoryEloquent

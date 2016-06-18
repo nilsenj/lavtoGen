@@ -8,6 +8,8 @@ use Pingpong\Support\Stub;
 use Core\Modular\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Core\Modular\Generators\FileAlreadyExistException;
+use Core\Modular\Generators\FileGenerator;
 
 class ModelCommand extends GeneratorCommand
 {
@@ -57,6 +59,65 @@ class ModelCommand extends GeneratorCommand
         return array(
             array('fillable', null, InputOption::VALUE_OPTIONAL, 'The fillable attributes.', null),
         );
+    }
+
+    public function fire() {
+        $path = str_replace('\\', '/', $this->getDestinationFilePath());
+
+        if (!$this->laravel['files']->isDirectory($dir = dirname($path))) {
+            $this->laravel['files']->makeDirectory($dir, 0777, true);
+        }
+
+        $contents = $this->getTemplateContents();
+        $model = studly_case($this->argument('model'));
+        
+        try {
+            $modelPath = base_path() . '/'. $this->argument('module') . '/Entities/' . $model . '.php';
+            $repositoryPath = base_path() . '/'. $this->argument('module') . '/Repositories/' . $model . 'RepositoryEloquent.php';
+            $transformerPath = base_path() . '/'. $this->argument('module') . '/Transformers/' . $model . 'Transformer.php';
+            $presenterPath = base_path() . '/'. $this->argument('module') . '/Presenters/' . $model . 'Presenter.php';
+            
+            if (!\File::exists($modelPath)) {
+
+                with(new FileGenerator($path, $contents))->generate();
+
+                $this->info("Created model: {$modelPath}");
+            }
+            if (!\File::exists($repositoryPath)) {
+
+                $this->call('module:make-repository', [
+                    'repository' => $this->argument('model'),
+                    'module' => $this->argument('module'),
+                    'model' => $this->argument('model'),
+                ]);
+            }
+
+            if (!\File::exists($transformerPath)) {
+
+                $this->call('module:make-transformer', [
+                    'transformer' => $this->argument('model'),
+                    'module' => $this->argument('module'),
+                    'model' => $this->argument('model'),
+                ]);
+            }
+
+            if (!\File::exists($presenterPath)) {
+
+                if ($this->confirm('Would you like to create a Presenter? [y|N]')) {
+                    $this->call('module:make-presenter', [
+                        'presenter' => $this->argument('model'),
+                        'module' => $this->argument('module'),
+                        'model' => $this->argument('model'),
+                    ]);
+                }
+            }
+
+        } catch (FileAlreadyExistException $e) {
+            $this->error("File : {$path} already exists.");
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
+
     }
 
     /**

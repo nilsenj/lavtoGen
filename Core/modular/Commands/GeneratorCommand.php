@@ -73,9 +73,7 @@ abstract class GeneratorCommand extends Command
 
     /**
      * Get class namespace.
-     *
-     * @param \Pingpong\Module\Module $module
-     *
+     * @param $module
      * @return string
      */
     public function getClassNamespace($module)

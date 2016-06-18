@@ -7,7 +7,4 @@ class $CLASS$ extends Model {
 
     protected $fillable = $FILLABLE$;
 
-    public static $logCustomFields = [
-            'module_name'  => '$MODULE$'
-        ];
 }

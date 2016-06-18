@@ -40,7 +40,7 @@ class ModuleGenerator extends Generator
     protected $console;
 
     /**
-     * The pingpong module instance.
+     * The module instance.
      *
      * @var Module
      */
@@ -180,7 +180,7 @@ class ModuleGenerator extends Generator
     }
 
     /**
-     * Get the pingpong module instance.
+     * Get the module instance.
      *
      * @return Module
      */

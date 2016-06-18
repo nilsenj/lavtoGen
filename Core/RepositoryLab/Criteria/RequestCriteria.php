@@ -15,10 +15,12 @@ class RequestCriteria implements CriteriaInterface
      * @var \Illuminate\Http\Request
      */
     protected $request;
+    
     public function __construct(Request $request)
     {
         $this->request = $request;
     }
+    
     /**
      * Apply criteria in query repository
      *

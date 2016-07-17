@@ -9,7 +9,6 @@
 namespace Core\modular\Traits;
 
 use Illuminate\Support\Facades\DB;
-use Core\Messenger\Models\Thread;
 use Core\Models\ModuleLayer;
 use Core\Modular\Module;
 

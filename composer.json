@@ -51,7 +51,7 @@
         "psr-4": {
             "App\\": "app/",
             "Core\\": "core/",
-            "RepositoryLab\\Repository\\": "core/RepositoryLab/",
+            "RepositoryLab\\Repository\\": "core/modular/RepositoryLab/",
             "Core\\Modular\\": "core/modular/",
             "Core\\Models\\": "core/Models/",
             "Core\\Presenters\\": "core/Presenters/",

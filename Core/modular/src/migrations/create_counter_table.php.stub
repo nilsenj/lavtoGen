@@ -1,0 +1,49 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateCountersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+
+        Schema::create('modular_counter', function($table)
+             {
+                 $table->increments('id');
+                 $table->string('class_name');
+                 $table->integer('object_id');
+                 $table->integer('view_counter')->unsigned()->nullable();
+                 $table->index('class_name');
+                 $table->index('object_id');
+                 $table->timestamps();
+             });
+        Schema::create('modular_user_counter', function($table)
+                {
+                    $table->increments('id');
+                    $table->string('class_name');
+                    $table->integer('object_id');
+                    $table->integer('user_id');
+                    $table->string('action');
+                    $table->timestamps();
+                    $table->index('class_name');
+                    $table->index('object_id');
+                    $table->index('user_id');
+                });
+    }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('modular_counter');
+        Schema::dropIfExists('modular_user_counter');
+    }
+}

@@ -23,6 +23,26 @@ class ModulesServiceProvider extends ServiceProvider
         $this->registerNamespaces();
 
         $this->registerModules();
+        
+        if (!class_exists('CreateModulesTable')) {
+            
+            $this->publishes([
+                __DIR__.'/../modular/src/migrations/create_modules_table.php.stub' => database_path('migrations/2016_06_19_183613_create_modules_table.php'),
+            ], 'migrations');
+        }
+        if (!class_exists('CreateLikesTable')) {
+            
+            $this->publishes([
+                __DIR__.'/../modular/src/migrations/create_likes_table.php.stub' => database_path('migrations/2016_06_19_183644_create_likes_table.php'),
+            ], 'migrations');
+        }
+        
+        if (!class_exists('CreateCounterTable')) {
+
+            $this->publishes([
+                __DIR__.'/../modular/src/migrations/create_counter_table.php.stub' => database_path('migrations/2016_06_25_183644_create_counter_table.php'),
+            ], 'migrations');
+        }
     }
 
     /**
@@ -80,6 +100,11 @@ class ModulesServiceProvider extends ServiceProvider
             'HTML' => 'Collective\Html\HtmlFacade',
             'Form' => 'Collective\Html\FormFacade',
             'Module' => 'Core\Modular\Facades\Module',
+            'ModuleLayer' => 'Core\Modular\Facades\ModuleLayer',
+            'Counter' => 'Core\Modular\Facades\Counter',
+            'Like' => 'Core\Modular\Facades\Like',
+            'LikeCounter' => 'Core\Modular\Facades\LikeCounter',
+            'UserCounter' => 'Core\Modular\Facades\UserCounter',
         ];
 
         AliasLoader::getInstance($aliases)->register();
